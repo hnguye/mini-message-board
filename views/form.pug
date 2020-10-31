@@ -3,18 +3,19 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(rel="stylesheet", type="text/css", href="semantic/dist/semantic.min.css")
+    link(rel="stylesheet", type="text/css", href="style.css")
     title= title
   body
     header
-      h1= title
-      h2= "Add a new Message"
-    main
-      form(action="/new", method="post")
+      h1(class="ui container header")= title
+      h2(class="ui raised very padded header container segment")= "Add a new Message"
+    main(class="ui raised very padded text container segment")
+      form(action="/new", method="post" class="ui form")
         label(for="user") User
         input(id="user" name="user" type="text" required)
         label(for="message") Message
-        textarea(id="message" name="message", cols="30", rows="10" required)
+        textarea(id="message" name="message", class=" ", required)
         div(class="options")
-          a(href="/" class="back-btn") back
-          button(class="add-btn") add
+          a(href="/" class="ui left labeled icon button") Back
+            i(class="arrow left icon")
+          button(class="ui positive basic button") Add

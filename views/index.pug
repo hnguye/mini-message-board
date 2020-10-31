@@ -3,18 +3,17 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(rel="stylesheet", type="text/css", href="semantic/dist/semantic.min.css")
+    link(rel="stylesheet", href="style.css")
     title= title
   body
     header
-      h1= title
-    main
+      h1(class="ui rased very padded header container segment")= title
+    main(class="ui raised very padded text container segment")
       ul
         each message in messages
           li
-            div(class="user-info")
+            div(class="ui raised very padded text container segment")
               p User: #{message.user}
               p Date: #{message.added.date} #{message.added.time}
-            div(class="user-message")
               p Message: #{message.text}
-    a(href="/new" class="new-message") Add new Message
+    a(href="/new" class="ui positive basic container button") Add new Message
