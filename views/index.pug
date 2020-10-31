@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", type="text/css", href="semantic/dist/semantic.min.css")
+    title= title
+  body
+    header
+      h1= title
+    main
+      ul
+        each message in messages
+          li
+            div(class="user-info")
+              p User: #{message.user}
+              p Date: #{message.added.date} #{message.added.time}
+            div(class="user-message")
+              p Message: #{message.text}
+    a(href="/new" class="new-message") Add new Message
